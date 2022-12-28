@@ -15,9 +15,10 @@ star_table = soup.find('table')
 temp_list= []
 table_rows = star_table.find_all('tr')
 for tr in table_rows:
-    td = tr.find_all('td')
+    #find td tags
+    
     row = [i.text.rstrip() for i in td]
-    temp_list.append(row)
+    #append to templist
 
 
 
@@ -37,4 +38,4 @@ for i in range(1,len(temp_list)):
 df2 = pd.DataFrame(list(zip(Star_names,Distance,Mass,Radius,Lum)),columns=['Star_name','Distance','Mass','Radius','Luminosity'])
 print(df2)
 
-df2.to_csv('bright_stars.csv')
+#convert to csv file
