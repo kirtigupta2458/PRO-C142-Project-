@@ -7,9 +7,7 @@ import pandas as pd
 
 url = 'https://en.wikipedia.org/wiki/List_of_brown_dwarfs'
 
-page = requests.get(url)
-
-soup = bs(page.text,'html.parser')
+#get the page and read it in html format
 
 star_table = soup.find_all('table')
 
